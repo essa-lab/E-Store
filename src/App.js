@@ -6,6 +6,8 @@ import Checkout from './components/Checkout';
 import Basket from './components/Basket';
 import Category from './components/Category';
 import Home from './components/Home';
+import OrderConfirmation from './components/OrderConfirmation';
+import SearchResults from './components/SeachResults';
 import {
   BrowserRouter,
   Routes,
@@ -31,7 +33,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout categories={categories}/>}>
          <Route index element={<Home />}/>
+         <Route path="search" element={<SearchResults/>}/>
          <Route path="checkout" element={<Checkout />}/>
+         <Route path="orderconfirmation" element={<OrderConfirmation />}></Route>
          <Route path="basket" element={<Basket />}/>
          <Route path="products/:productId" element={<Product />}/>
          <Route path="categories/:categoryId" element={<Category />}/>
